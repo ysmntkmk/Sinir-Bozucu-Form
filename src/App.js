@@ -188,7 +188,11 @@ export default function App() {
           değerlendirirsiniz?
         </legend>
 
-        <select onChange={handleChange} name='rating' defaultValue='10'>
+        <select
+          name='rating'
+          value={formData.rating} // Kontrollü select
+          onChange={handleChange}
+        >
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -206,6 +210,7 @@ export default function App() {
         <input
           type='checkbox'
           name='marketingResponse'
+          checked={formData.marketingResponse} // Kontrollü checkbox
           onChange={handleChange}
         />
 
