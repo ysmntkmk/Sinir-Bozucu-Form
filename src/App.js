@@ -122,34 +122,37 @@ export default function App() {
         type='text'
         placeholder='Adı'
         onChange={handleChange}
+        value={formData.firstName} // Kontrollü input
         name='firstName'
       />
-
+      
       <input
         type='text'
         placeholder='Soyadı'
-        onChange={handleChange}
         name='lastName'
+        value={formData.lastName} // Kontrollü input
+        onChange={handleChange}
       />
 
       <input
         type='email'
         placeholder='Email'
-        onChange={handleChange}
         name='email'
-      />
+        value={formData.email} // Kontrollü input
+        onChange={handleChange}
+      />  
 
       <fieldset>
         <legend>
           Gizlilikle ilgili tüm haklarınızdan feragat etmek ister misiniz?
         </legend>
         <div className='privacy-container'>
-          <label>
+        <label>
             <input
               type='radio'
-              id='yes'
               name='privacyResponse'
               value='yes'
+              checked={formData.privacyResponse === 'yes'} // Kontrollü radio
               onChange={handleChange}
             />
             Evet
@@ -158,10 +161,9 @@ export default function App() {
           <label>
             <input
               type='radio'
-              id='no'
               name='privacyResponse'
               value='no'
-              defaultChecked
+              checked={formData.privacyResponse === 'no'} // Kontrollü radio
               onChange={handleChange}
             />
             Hayır
@@ -170,9 +172,9 @@ export default function App() {
           <label>
             <input
               type='radio'
-              id='absolutely'
               name='privacyResponse'
               value='absolutely'
+              checked={formData.privacyResponse === 'absolutely'} // Kontrollü radio
               onChange={handleChange}
             />
             Kesinlikle
